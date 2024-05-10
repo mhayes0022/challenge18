@@ -15,6 +15,21 @@
 
 //Is the following supposed to be in a seperate file? Unclear.
 
-// /api/users/:usersId/friends/:friendsId
+// /api/users/:userId/friends/:friendsId
 //POST to add a new friend to a user's friend list
 //DELETE to remove a friend from a user's friend list
+const router = require('express').Router()
+const {
+    addUser,
+    getUsers,
+    getOneUser,
+    updateUser
+}= require('../../controllers/userController')
+
+router.route('/').post(addUser).get(getUsers)
+
+router.route('/:userId').get(getOneUser).put(updateUser)
+
+router.route('/:userId/friends/:friendsId').post().delete()
+
+module.exports = router

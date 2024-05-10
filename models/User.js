@@ -1,24 +1,22 @@
-const { Schema, Types} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema(
     {
         username: {
-            type: STRING,
+            type: String,
             required: true,
-            allowNull: false,
             unique: true,
         },
         email: {
-            type: STRING,
+            type: String,
             required: true,
-            allowNull: false,
             unique: true,
-            isEmail: true,
+            match: ['/.+@.+\..+/', 'Does not match email format']
         },
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'User',
+                ref: 'user',
             },
         ],
     },
@@ -34,9 +32,17 @@ const userSchema = new Schema(
 userSchema
     .virtual('friendCount')
     .get(function() {
-        return `${friends}`
+        return this.friends.length;
     });
 
 const User = model('user', userSchema);
 
 module.exports = User;
+
+const obj= {
+    name: 'VInnie', 
+    age: 39,
+    location: 'LA'
+}
+
+const {name, age, location}= obj
