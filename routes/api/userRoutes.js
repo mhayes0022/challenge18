@@ -13,7 +13,7 @@
 
 //BONUS: remove a user's associated thoughts when deleted
 
-//Is the following supposed to be in a seperate file? Unclear.
+//Is the following supposed to be in a seperate file? Unclear. 
 
 // /api/users/:userId/friends/:friendsId
 //POST to add a new friend to a user's friend list

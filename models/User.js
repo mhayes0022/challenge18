@@ -19,6 +19,12 @@ const userSchema = new Schema(
                 ref: 'user',
             },
         ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'user', 
+            },
+        ],
     },
     {
         toJSON: {
@@ -27,8 +33,8 @@ const userSchema = new Schema(
         id: false,
     }
 );
+//Note: I'm not sure if the friends array above is correct
 
-//Below is just placeholders, etc. NOT finished
 userSchema
     .virtual('friendCount')
     .get(function() {
@@ -39,10 +45,10 @@ const User = model('user', userSchema);
 
 module.exports = User;
 
-const obj= {
-    name: 'VInnie', 
-    age: 39,
-    location: 'LA'
-}
+// const obj= {
+//     name: 'VInnie', 
+//     age: 39,
+//     location: 'LA'
+// }
 
-const {name, age, location}= obj
+// const {name, age, location}= obj
