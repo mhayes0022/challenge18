@@ -11,8 +11,6 @@ const thoughtSchema = new Schema(
             min: 1,
         },
         createdAt: {
-            //Date
-            //set default value to the current timestamp on query
             //use a getter method to format the timestamp query
             type: Date, 
             default: Date.now ,
@@ -22,7 +20,6 @@ const thoughtSchema = new Schema(
             required: true,
         },
         reactions: [
-            //Note: these are like replies
             //Array of nested documents created with the reactionsSchema
             reactionSchema
         ],

@@ -9,7 +9,7 @@
 //POST to add a new friend to a user's friend list
 //DELETE to remove a friend from a user's friend list
 
-//const {} = require('mongoose');
+//const { ObjectId } = require('mongoose');
 const { User, Thought } = require('../models');
 
 
@@ -26,8 +26,13 @@ module.exports = {
     async getUsers(req, res) {
         try {
             const users = await User.find();
-            //NOT DONE
-            res.json(users);
+
+            const userObj = {
+                users,
+                //anything more here? 
+            }
+            //NOT DONE. //Do I put 'userObj' in line below, or just 'user'? Do I even need userObj at all?
+            res.json(userObj);
         } catch (err) {
             console.log(err);
             return res.status(500).json(err);
