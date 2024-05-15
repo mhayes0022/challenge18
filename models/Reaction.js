@@ -1,5 +1,5 @@
 const { Schema, Types } = require('mongoose');
-//This one had a note on it that it's supposed to be a SCHEMA ONLY
+//This is a SCHEMA ONLY, it's a subdocument for the Thought model
 //this will not be a model, but will be used as the reaction field's subdocument schema in the Thought model
 
 const reactionSchema = new Schema(

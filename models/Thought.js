@@ -7,8 +7,8 @@ const thoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: true,
-            max: 280,
-            min: 1,
+            maxLength: 280,
+            minLength: 1,
         },
         createdAt: {
             //use a getter method to format the timestamp query
@@ -20,7 +20,7 @@ const thoughtSchema = new Schema(
             required: true,
         },
         reactions: [
-            //Array of nested documents created with the reactionsSchema
+            //Array of nested documents created with the reactionSchema
             reactionSchema
         ],
     },

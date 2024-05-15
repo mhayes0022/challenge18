@@ -24,12 +24,15 @@ const {
     getUsers,
     getOneUser,
     updateUser
-}= require('../../controllers/userController')
+}= require('../../controllers/userController');
 
-router.route('/').post(addUser).get(getUsers)
+// /api/user
+router.route('/').get(getUsers).post(addUser);
 
-router.route('/:userId').get(getOneUser).put(updateUser)
+// /api/user/:userId
+router.route('/:userId').get(getOneUser).put(updateUser);
 
-router.route('/:userId/friends/:friendsId').post().delete()
+// /api/user/:userId/friends/:friendId
+router.route('/:userId/friends/:friendId').post().delete();
 
-module.exports = router
+module.exports = router;

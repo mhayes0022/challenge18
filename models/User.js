@@ -11,7 +11,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            match: ['/.+@.+\..+/', 'Does not match email format']
+            match: [/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/, 'Does not match email format']
         },
         thoughts: [
             {
@@ -33,7 +33,7 @@ const userSchema = new Schema(
         id: false,
     }
 );
-//Note: I'm not sure if the friends array above is correct
+
 
 userSchema
     .virtual('friendCount')
@@ -52,3 +52,5 @@ module.exports = User;
 // }
 
 // const {name, age, location}= obj
+
+//'/.+@.+\..+/'
