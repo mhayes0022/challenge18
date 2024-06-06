@@ -1,38 +1,21 @@
-//GET all users
-//GET a single user by it's _id and populated thought and friend data
-//POST a new user
-
-// example data
-// {
-//     "username": "lernantino",
-//     "email": "lernantino@gmail.com"
-//   }
-
-//PUT to update a user by it's _id
-//DELETE to remove user by it's _id
-
-//BONUS: remove a user's associated thoughts when deleted
-
-//Is the following supposed to be in a seperate file? Unclear. 
-
-// /api/users/:userId/friends/:friendsId
-//POST to add a new friend to a user's friend list
-//DELETE to remove a friend from a user's friend list
 const router = require('express').Router()
 const {
-    addUser,
     getUsers,
     getOneUser,
-    updateUser
+    addUser,
+    updateUser,
+    deleteUser,
+    addUserFriend,
+    deleteUserFriend
 }= require('../../controllers/userController');
 
-// /api/user
+// /api/users
 router.route('/').get(getUsers).post(addUser);
 
-// /api/user/:userId
-router.route('/:userId').get(getOneUser).put(updateUser);
+// /api/users/:userId
+router.route('/:userId').get(getOneUser).put(updateUser).delete(deleteUser);
 
-// /api/user/:userId/friends/:friendId
-router.route('/:userId/friends/:friendId').post().delete();
+// /api/users/:userId/friends/:friendId
+router.route('/:userId/friends/:friendId').post(addUserFriend).delete(deleteUserFriend);
 
 module.exports = router;

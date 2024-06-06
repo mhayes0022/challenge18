@@ -22,4 +22,3 @@ db.once('open', () => {
   });
 });
 
-//Am I going to need a .env and a .gitignore file yet?
