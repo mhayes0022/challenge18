@@ -5,6 +5,14 @@ This purpose of this application was to build the backend for a social media sit
 
 ## Link to Demo Videos
 
+https://drive.google.com/file/d/19E-TynCE4plk1Stp5i7UgHY416P5TY7m/view?usp=sharing
+
+https://drive.google.com/file/d/1b2LmROHxtnkczfMboV6Rz4pCKa2BLi2d/view?usp=sharing
+
+https://drive.google.com/file/d/1uNa3xpqbpfIWdqM0Wn9lqvoYLajwtcrn/view?usp=sharing
+
+https://drive.google.com/file/d/1UG8PJfRhIYxicwvM4ldr7n_CCdH-efBb/view?usp=sharing
+
 ## Credits
 This application was written almost entirely by me, with some invaluable help from a tutor throught the University of Minnesota for the purposes of fullfilling a fullstack coding bootcamp requirement. 
 
